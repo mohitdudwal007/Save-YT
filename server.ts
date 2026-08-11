@@ -12,7 +12,7 @@ import {
 } from './server/rapidApiService.ts';
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000;
 
 // Trust reverse proxy headers (required behind Cloud Run / Nginx)
 app.set('trust proxy', true);
